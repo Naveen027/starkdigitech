@@ -14,7 +14,7 @@ body {
 
 /* GLASSMORPHISM CARDS */
 section {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 36%);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 60px 20px;
@@ -22,6 +22,10 @@ section {
     width: 100%;
     max-width: 1200px;
     animation: fadeIn 1s ease forwards;
+}
+
+section h2 {
+    text-align: center;
 }
 
 /* ANIMATIONS */
@@ -196,6 +200,73 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.portfolio-grid a {
+    text-decoration: none;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* H3 Styling */
+.portfolio-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #0d1b2a;
+    /* Dark premium tone */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Paragraph Styling */
+.portfolio-card p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Link Styling */
+.portfolio-card a {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #1e90ff;
+    /* Vibrant blue for CTA */
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.portfolio-card a:hover {
+    color: #0b61b8;
+    border-bottom: 2px solid #0b61b8;
+}
+
+
+
+
 .pricing-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -261,6 +332,66 @@ header {
     color: #333;
 }
 
+.service-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Dark overlay to make text readable */
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* blackish shade */
+    border-radius: 15px;
+    z-index: 0;
+}
+
+/* Card text on top */
+.service-card h3,
+.service-card p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings */
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Paragraph */
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Service Grid */
+.service-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 40px;
+}
 
 
 /* CONTACT FORM */
@@ -366,8 +497,53 @@ header {
     }
 }
 
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
 /* MOBILE */
 @media(max-width:900px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        width: 100%;
+        max-width: 345px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    .portfolio-grid {
+        padding: 20px;
+        gap: 15px;
+    }
+
     nav {
         background: linear-gradient(115deg, #a8edea, #fed6e3);
     }
@@ -407,14 +583,15 @@ header {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-   
-    .hero{
-        width: 55.9vh;
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
     }
 
     .about {
         padding: 40px 20px;
-        margin: 30px 15px;
+        margin: 30px 0px;
     }
 
     .about h2 {
@@ -424,8 +601,38 @@ header {
     .about p {
         font-size: 1rem;
         line-height: 1.6;
+        text-align: justify;
     }
 
+    .service-grid {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .service-card {
+        padding: 20px;
+        min-height: 200px;
+        border-radius: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .portfolio-card h3,
+    .portfolio-card p,
+    .portfolio-card a {
+        text-align: center;
+    }
+
+    .portfolio-card p {
+        text-align: justify;
+    }
 
     .desktop-footer {
         padding: 20px 15px;
@@ -459,4 +666,38 @@ header {
         font-size: 18px;
         padding: 8px;
     }
+
+
+    /* Hide on desktop */
+    .whatsapp-float {
+        display: none;
+    }
+
+    /* Show on mobile screens */
+
+    .whatsapp-float {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .whatsapp-float img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
 }
