@@ -25,3 +25,22 @@ setInterval(() => {
   current = (current + 1) % slides.length;
   slides[current].classList.add('active');
 }, 2500); // change text every 2.5 seconds
+
+
+
+{/* <script> */}
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".process-card");
+    let current = 0;
+
+    function animateStep() {
+        cards.forEach(card => card.classList.remove("active"));
+        cards[current].classList.add("active");
+
+        current = (current + 1) % cards.length; // loop back to first
+    }
+
+    animateStep(); // start immediately
+    setInterval(animateStep, 1000); // change step every 1 second
+});
+// </script>

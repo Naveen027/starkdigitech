@@ -18,7 +18,7 @@ section {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 60px 20px;
-    margin: 40px auto;
+    margin: 40px 20px 0px 20px;
     width: 100%;
     max-width: 1200px;
     animation: fadeIn 1s ease forwards;
@@ -228,7 +228,7 @@ header {
 .portfolio-card h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #0d1b2a;
     /* Dark premium tone */
     margin-bottom: 10px;
@@ -332,6 +332,13 @@ header {
     color: #333;
 }
 
+.service-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 40px;
+}
+
 .service-card {
     position: relative;
     background-size: cover;
@@ -341,57 +348,116 @@ header {
     color: #fff;
     text-align: center;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, justify-content 0.5s;
     min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    /* Heading centered initially */
 }
 
-/* Dark overlay to make text readable */
+/* Dark overlay */
 .service-card::before {
     content: '';
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    /* blackish shade */
     border-radius: 15px;
     z-index: 0;
 }
 
-/* Card text on top */
-.service-card h3,
-.service-card p {
+/* Heading */
+.service-card h3 {
     position: relative;
     z-index: 1;
-}
-
-/* Headings */
-.service-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 10px;
     font-weight: 600;
+    margin: 0;
+    transition: all 0.5s ease;
 }
 
-/* Paragraph */
+/* Paragraph hidden initially */
 .service-card p {
-    font-size: 1rem;
-    line-height: 1.5;
+    position: relative;
+    text-align: justify;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 15px;
 }
 
 /* Hover effect */
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    justify-content: flex-start;
+    /* Heading moves to top */
+    padding-top: 25px;
 }
 
-/* Service Grid */
-.service-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    padding: 40px;
+/* Show paragraph on hover */
+.service-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
 }
+
+/* Keep heading centered initially */
+.service-card:not(:hover) h3 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Process Grid */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 6 columns on desktop */
+    gap: 30px;
+    padding: 40px;
+    justify-items: center;
+}
+
+/* Process Card */
+.process-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+/* Circle Icon */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7cd8d3, #f0a4bc);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Text */
+.process-text {
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Highlight current step in animation */
+.process-card.active {
+    opacity: 1;
+}
+
+.process-card.active .icon-circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(224, 143, 212, 0.7);
+}
+
 
 
 /* CONTACT FORM */
@@ -415,13 +481,115 @@ header {
     border-radius: 50px;
     border: none;
     background: #222;
-    color: #fff;
+    color: linear-gradient(135deg, #a8edea, #fed6e3);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .contact-form button:hover {
     background: #555;
+}
+
+/* Main Section (Left + Right) */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    align-items: center;
+}
+
+/* LEFT SIDE 2×2 GRID */
+.contact-left {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Cards */
+.contact-card {
+    background: #f7f7f7;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* Icon Circle */
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 auto 10px;
+}
+
+/* Text inside card */
+.contact-card p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #161515;
+}
+
+/* CONTACT FORM */
+.contact-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 15px;
+    border: none;
+    background: #e08fd4;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #cc79be;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .contact-left {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -622,6 +790,7 @@ header {
     .service-card p {
         font-size: 0.9rem;
         line-height: 1.4;
+        text-align: justify;
     }
 
     .portfolio-card h3,
@@ -632,6 +801,11 @@ header {
 
     .portfolio-card p {
         text-align: justify;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .desktop-footer {
