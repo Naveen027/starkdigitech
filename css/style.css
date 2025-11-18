@@ -8,19 +8,32 @@
 
 /* BODY */
 body {
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #211231, #9288998a);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+#network-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind all content */
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allow scrolling & clicks through canvas */
 }
 
 /* GLASSMORPHISM CARDS */
 section {
-    background: rgb(255 255 255 / 36%);
+    background: linear-gradient(135deg, #211231 0%, #9288998a 35%, #211231 70%);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 60px 20px;
-    margin: 40px 20px 0px 20px;
+    margin: 40px 20px 0px 0px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1520px;
     animation: fadeIn 1s ease forwards;
 }
 
@@ -54,6 +67,7 @@ header {
 
 .nav-container {
     max-width: 1200px;
+    height: 85px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -75,7 +89,7 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: #222;
+    color: #ffffff;
     font-weight: 500;
     position: relative;
 }
@@ -114,15 +128,32 @@ header {
 
 /* HERO */
 .hero {
+    position: relative; /* needed for canvas positioning */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
-    color: #222;
+    background: linear-gradient(135deg, #211231, #9288998a);
+    color: #ffffff;
     overflow: hidden;
 }
+
+#hero-network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* allow clicks/scroll through */
+    z-index: 0; /* behind content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* above canvas */
+}
+
 
 .hero-content h1 {
     font-size: 3rem;
@@ -229,7 +260,7 @@ header {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #0d1b2a;
+    color: #341f3b;
     /* Dark premium tone */
     margin-bottom: 10px;
     text-align: left;
@@ -240,7 +271,7 @@ header {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    color: #333333;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: left;
@@ -252,7 +283,7 @@ header {
     cursor: pointer;
     font-weight: 500;
     font-size: 0.95rem;
-    color: #1e90ff;
+    color: #ffffff;
     /* Vibrant blue for CTA */
     text-decoration: none;
     border-bottom: 2px solid transparent;
@@ -264,8 +295,7 @@ header {
     border-bottom: 2px solid #0b61b8;
 }
 
-
-
+   
 
 .pricing-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -323,13 +353,13 @@ header {
 .about h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    color: #222;
+    color: #ffffff;
 }
 
 .about p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: #ffffff;
 }
 
 .service-grid {
@@ -411,20 +441,28 @@ header {
 /* Process Grid */
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* 6 columns on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* responsive columns */
     gap: 30px;
     padding: 40px;
-    justify-items: center;
+    justify-items: center; /* centers items in each column */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Process Card */
 .process-card {
+    border: 2px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* take full column width */
+    max-width: 150px; /* limit card size */
+    height: 150px; /* same height */
     opacity: 0.5;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 /* Circle Icon */
@@ -432,7 +470,7 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7cd8d3, #f0a4bc);;
+    background: linear-gradient(135deg, #7532bc 0%, #9288998a 35%, #7532bc 70%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -446,7 +484,9 @@ header {
     font-weight: 600;
     text-align: center;
     font-size: 1rem;
+    word-wrap: break-word;
 }
+
 
 /* Highlight current step in animation */
 .process-card.active {
@@ -455,7 +495,7 @@ header {
 
 .process-card.active .icon-circle {
     transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(224, 143, 212, 0.7);
+    box-shadow: 0 0 15px rgba(125, 46, 147, 0.7);
 }
 
 
@@ -480,7 +520,7 @@ header {
     padding: 12px;
     border-radius: 50px;
     border: none;
-    background: #222;
+    background: #211231;
     color: linear-gradient(135deg, #a8edea, #fed6e3);
     cursor: pointer;
     transition: 0.3s;
@@ -504,11 +544,13 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    height: 44vh;
 }
 
 /* Cards */
 .contact-card {
-    background: #f7f7f7;
+    background: #5a366042;
+    border: 2px solid #623570;
     padding: 15px;
     text-align: center;
     border-radius: 15px;
@@ -526,7 +568,7 @@ header {
 .contact-icon {
     width: 55px;
     height: 55px;
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    border: 2px solid white;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -536,20 +578,24 @@ header {
     margin: 0 auto 10px;
 }
 
+.contact-icon:hover{
+    background-color: white;
+    border: 2px solid #341f3b;
+}
 /* Text inside card */
 .contact-card p {
     margin: 0;
     font-size: 1rem;
     font-weight: 400;
-    color: #161515;
+    color: #ffffff;
 }
 
 /* CONTACT FORM */
 .contact-form {
-    background: #ffffff;
+    background: #ffffff1c;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -594,7 +640,7 @@ header {
 
 
 .desktop-footer {
-    background: #0d1b2a;
+    background: #211231;
     padding: 28px 40px;
     color: #cfd6e1;
     margin-top: 50px;
@@ -788,7 +834,7 @@ header {
         top: 50px;
     }
 
-    .service-card:hover h3{
+    .service-card:hover h3 {
         top: 0;
     }
 
@@ -811,6 +857,103 @@ header {
     .process-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    /* Contact Section stacked with proper padding */
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        /* ensures space from screen edges */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Left side 2x2 grid */
+    .contact-left {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Cards: same width & height, fit inside parent */
+    .contact-card {
+        background: #f7f7f7;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        /* perfectly square */
+        padding: 10px;
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 130px;
+        /* prevent overflow */
+    }
+
+    /* Icon inside card */
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+
+    /* Card text */
+    .contact-card p {
+        font-size: 0.85rem;
+        text-align: center;
+        margin: 0;
+        word-wrap: break-word;
+        /* prevent long text overflow */
+    }
+
+    /* Contact form below cards */
+    .contact-form {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        /* ensure it doesn’t overflow */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+        border: none;
+        background: #211231;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+        background: #cc79be;
     }
 
     .desktop-footer {
@@ -879,4 +1022,156 @@ header {
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
+}
+
+
+/* From Uiverse.io by MuhammadHasann */
+button {
+    position: relative;
+    padding: 12px 35px;
+    background: #fec195;
+    font-size: 17px;
+    font-weight: 500;
+    color: #181818;
+    border: 3px solid #fec195;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #fec1958c;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.star-1 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s ease;
+}
+
+button:hover {
+    background: black;
+    color: #ffffff;
+    box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+    position: absolute;
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+button:hover .star-2 {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+button:hover .star-3 {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+button:hover .star-4 {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+button:hover .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+button:hover .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ffe203);
+    z-index: 2;
+}
+
+.fil0 {
+    fill: #ffe203;
 }
