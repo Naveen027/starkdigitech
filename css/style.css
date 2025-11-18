@@ -8,21 +8,23 @@
 
 /* BODY */
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #211231, #9288998a);
-  color: white;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #211231, #9288998a);
+    color: white;
+    scroll-behavior: smooth;
 }
 
 #network-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1; /* behind all content */
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* allow scrolling & clicks through canvas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* behind all content */
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* allow scrolling & clicks through canvas */
 }
 
 /* GLASSMORPHISM CARDS */
@@ -128,7 +130,8 @@ header {
 
 /* HERO */
 .hero {
-    position: relative; /* needed for canvas positioning */
+    position: relative;
+    /* needed for canvas positioning */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -145,13 +148,16 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* allow clicks/scroll through */
-    z-index: 0; /* behind content */
+    pointer-events: none;
+    /* allow clicks/scroll through */
+    z-index: 0;
+    /* behind content */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1; /* above canvas */
+    z-index: 1;
+    /* above canvas */
 }
 
 
@@ -295,7 +301,7 @@ header {
     border-bottom: 2px solid #0b61b8;
 }
 
-   
+
 
 .pricing-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -441,10 +447,12 @@ header {
 /* Process Grid */
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* responsive columns */
     gap: 30px;
     padding: 40px;
-    justify-items: center; /* centers items in each column */
+    justify-items: center;
+    /* centers items in each column */
     width: 100%;
     box-sizing: border-box;
 }
@@ -456,9 +464,12 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100%; /* take full column width */
-    max-width: 150px; /* limit card size */
-    height: 150px; /* same height */
+    width: 100%;
+    /* take full column width */
+    max-width: 150px;
+    /* limit card size */
+    height: 150px;
+    /* same height */
     opacity: 0.5;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -578,10 +589,11 @@ header {
     margin: 0 auto 10px;
 }
 
-.contact-icon:hover{
+.contact-icon:hover {
     background-color: white;
     border: 2px solid #341f3b;
 }
+
 /* Text inside card */
 .contact-card p {
     margin: 0;
@@ -801,6 +813,7 @@ header {
     .hero {
         width: 100%;
         max-width: 100%;
+        background: linear-gradient(135deg, #211231, #9288998a);
     }
 
     .about {
