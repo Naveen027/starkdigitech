@@ -112,20 +112,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvas.getContext('2d');
 
     let width, height;
+    let dpr = window.devicePixelRatio || 1;
 
     function initCanvas(){
-        // get CSS size
+        // FIX ADDED HERE — always read the CSS size
         width = canvas.clientWidth;
         height = canvas.clientHeight;
 
-        // get device pixel ratio
-        const dpr = window.devicePixelRatio || 1;
-
-        // set canvas resolution
+        // FIX ADDED — adjust canvas resolution for mobile DPI
         canvas.width = width * dpr;
         canvas.height = height * dpr;
 
-        // scale context so drawing is sharp
+        // FIX ADDED — scale drawing so it is sharp & not blurry
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
@@ -154,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const dist = Math.sqrt(dx*dx + dy*dy);
                 if(dist < 150){
                     ctx.strokeStyle = `rgba(255,255,255,${1 - dist/150})`;
-                    ctx.lineWidth = 1;
+                    ctx.lineWidth = 1 / dpr;  // FIXED THICK LINES ON MOBILE
                     ctx.beginPath();
                     ctx.moveTo(points[i].x, points[i].y);
                     ctx.lineTo(points[j].x, points[j].y);
@@ -170,8 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
             ctx.beginPath();
             ctx.arc(p.x,p.y,2,0,Math.PI*2);
             ctx.fill();
+
             p.x += p.vx;
             p.y += p.vy;
+
             if(p.x < 0 || p.x > width) p.vx*=-1;
             if(p.y < 0 || p.y > height) p.vy*=-1;
         }
@@ -182,6 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
     draw();
 
     window.addEventListener('resize', ()=>{
+        dpr = window.devicePixelRatio || 1;  // update DPI if zoom changes
         initCanvas();
     });
 })();
+
