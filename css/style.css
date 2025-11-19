@@ -10,7 +10,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #13133b;
+    background-color: #000000;
     color: white;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -30,7 +30,7 @@ body {
 
 /* GLASSMORPHISM CARDS */
 section {
-    background-color: #13133b;
+    background-color: #000000;
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 60px 20px;
@@ -63,7 +63,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.323);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -102,7 +102,7 @@ header {
     position: absolute;
     width: 0%;
     height: 2px;
-    background: #222;
+    background: #ffffff;
     bottom: -4px;
     left: 0;
     transition: 0.3s;
@@ -123,7 +123,7 @@ header {
 .hamburger span {
     height: 3px;
     width: 25px;
-    background: #222;
+    background: #ffffff;
     border-radius: 3px;
     transition: 0.3s;
 }
@@ -138,7 +138,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #13133b;
+    background-color: #000000;
     color: #ffffff;
     overflow: hidden;
 }
@@ -232,73 +232,66 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px;
 }
 
-.portfolio-grid a {
+.portfolio-card{
+    background:linear-gradient(135deg, #111111, #1a1a1a);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(255,255,255,.12);
+    padding:25px;
+    transition:.3s;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(255,255,255,.18);
+}
+
+.portfolio-card h3{
+    font:600 1.1rem Poppins,sans-serif;
+    color:#fff;
+    margin-bottom:10px;
+    text-align:left;
+}
+
+.portfolio-card p{
+    font:400 1rem Roboto,sans-serif;
+    color:#d6d6d6;
+    line-height:1.6;
+    margin-bottom:15px;
+    text-align:left;
+}
+
+.portfolio-card a{
     text-decoration: none;
+    font:500 .95rem Poppins,sans-serif;
+    cursor:pointer;
+    color:#000000;
+    border-bottom:2px solid transparent;
+    transition:.3s;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 40px;
+
+.portfolio-card button{
+    background:#fff;
+    color:#000;
+    padding:8px 16px;
+    border-radius:8px;
+    border:none;
+    transition:.3s;
 }
 
-.portfolio-card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* H3 Styling */
-.portfolio-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #341f3b;
-    /* Dark premium tone */
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-/* Paragraph Styling */
-.portfolio-card p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-/* Link Styling */
-.portfolio-card a {
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: #ffffff;
-    /* Vibrant blue for CTA */
+.portfolio-card button:hover a{
+    background:#000;
+    color:#fff;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-.portfolio-card a:hover {
-    color: #0b61b8;
-    border-bottom: 2px solid #0b61b8;
 }
 
 
@@ -319,33 +312,11 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* CARDS */
-.service-card,
-.portfolio-card,
-.pricing-card,
-.process-card,
-.testimonial-card,
-.contact-card {
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover,
-.portfolio-card:hover,
-.pricing-card:hover,
-.process-card:hover,
-.testimonial-card:hover {
-    transform: translateY(-10px);
-}
 
 /* ABOUT */
 /* ABOUT SECTION - Laptop */
 .about {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.933);
     /* Glassmorphism */
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -426,7 +397,7 @@ header {
 /* Hover effect */
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 25px rgba(196, 196, 196, 0.3);
     justify-content: flex-start;
     /* Heading moves to top */
     padding-top: 25px;
@@ -459,7 +430,7 @@ header {
 
 /* Process Card */
 .process-card {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border: 2px solid white;
     display: flex;
     flex-direction: column;
@@ -482,7 +453,7 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #13133b;
+    background-color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -507,7 +478,7 @@ header {
 
 .process-card.active .icon-circle {
     transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(125, 46, 147, 0.7);
+    box-shadow: 0 0 15px rgba(160, 160, 160, 0.7);
 }
 
 
@@ -532,8 +503,8 @@ header {
     padding: 12px;
     border-radius: 50px;
     border: none;
-    background: #211231;
-    color: linear-gradient(135deg, #a8edea, #fed6e3);
+    background: #000000;
+    /* color: linear-gradient(135deg, #a8edea, #fed6e3); */
     cursor: pointer;
     transition: 0.3s;
 }
@@ -561,8 +532,8 @@ header {
 
 /* Cards */
 .contact-card {
-    background: #5a366042;
-    border: 2px solid #623570;
+    background: #000000f1;
+    border: 2px solid #5c525f;
     padding: 15px;
     text-align: center;
     border-radius: 15px;
@@ -653,7 +624,7 @@ header {
 
 
 .desktop-footer {
-    background: #211231;
+    background: #000000;
     padding: 28px 40px;
     color: #cfd6e1;
     margin-top: 50px;
@@ -776,7 +747,7 @@ header {
     }
 
     section {
-        background-color: #13133b00;
+        background-color: #00000000;
         width: 100%;
         max-width: 345px;
         margin: 0 auto;
@@ -789,11 +760,11 @@ header {
         padding: 20px;
         margin: 0px;
         gap: 15px;
-        background-color: rgba(255, 253, 253, 0);
+        background-color: rgb(0, 0, 0);
     }
 
     .portfolio-grid .portfolio-card {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgb(0, 0, 0);
         backdrop-filter: blur(10px);
 
     }
@@ -808,7 +779,7 @@ header {
     }
 
     nav {
-        background-color: #13133b;
+        background-color: #000000;
         border-radius: 10px;
         border: 1px solid whitesmoke;
     }
@@ -852,7 +823,7 @@ header {
     .hero {
         width: 100%;
         max-width: 100%;
-        background-color: #13133b;
+        background-color: #000000;
     }
 
     .about {
@@ -914,8 +885,8 @@ header {
     }
 
     .process-card {
-        background-color: white;
-        color: #13133b;
+        background: linear-gradient(135deg, #111111, #1a1a1a);
+        color: #ffffff;
 
     }
 
@@ -942,10 +913,10 @@ header {
 
     /* Cards: same width & height, fit inside parent */
     .contact-card {
-        background: #ffffff42;
+        background:linear-gradient(135deg, #111111, #1a1a1a);
         border: 2px solid #62357000;
         border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.216);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -965,7 +936,7 @@ header {
         height: 45px;
         font-size: 1.5rem;
         margin-bottom: 6px;
-        background-color: #13133b;
+        background-color: #000000;
         color: white;
         border: 0px;
     }
@@ -989,7 +960,7 @@ header {
         gap: 12px;
         box-sizing: border-box;
         border-radius: 15px;
-        background: #ffffff1c;
+        background: #0000001c;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         max-width: 100%;
         /* ensure it doesn’t overflow */
@@ -1011,14 +982,15 @@ header {
         font-size: 0.95rem;
         border-radius: 10px;
         border: none;
-        background: #211231;
+        background:linear-gradient(135deg, #111111, #1a1a1a);
+
         color: #fff;
         cursor: pointer;
         transition: 0.3s;
     }
 
     .contact-form button:hover {
-        background: #cc79be;
+        background: #ffffff;
     }
 
     .desktop-footer {
@@ -1094,7 +1066,7 @@ header {
 button {
     position: relative;
     padding: 12px 35px;
-    background: #13133b;
+    background: #000000;
     font-size: 17px;
     font-weight: 500;
     color: #ffffff;
