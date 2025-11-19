@@ -847,6 +847,7 @@ header {
     .service-card h3 {
         font-size: 1.2rem;
         top: 50px;
+        font-weight: bold;
     }
 
     .service-card:hover h3 {
