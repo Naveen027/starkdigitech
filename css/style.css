@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
 }
 
 /* BODY */
@@ -12,7 +12,7 @@ body {
     padding: 0;
     background-color: #000000;
     color: white;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     scroll-behavior: smooth;
 }
 
@@ -256,7 +256,7 @@ header {
 
 .portfolio-card h3{
     font:600 1.1rem Poppins,sans-serif;
-    color:#fff;
+    color:#64a9f6;
     margin-bottom:10px;
     text-align:left;
 }
@@ -286,6 +286,10 @@ header {
     border-radius:8px;
     border:none;
     transition:.3s;
+}
+
+.portfolio-card button:hover{
+    box-shadow: 0 0 25px #64a9f6;
 }
 
 .portfolio-card button:hover a{
@@ -334,6 +338,7 @@ header {
 }
 
 .about p {
+    text-align: justify;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #ffffff;
@@ -1146,7 +1151,7 @@ button {
 button:hover {
     background: black;
     color: #ffffff;
-    box-shadow: 0 0 25px #fec1958c;
+    box-shadow: 0 0 25px #64a9f6;
 }
 
 button:hover .star-1 {
@@ -1155,7 +1160,7 @@ button:hover .star-1 {
     left: -30%;
     width: 25px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
@@ -1165,7 +1170,7 @@ button:hover .star-2 {
     left: 10%;
     width: 15px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
@@ -1175,7 +1180,7 @@ button:hover .star-3 {
     left: 25%;
     width: 5px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
@@ -1185,7 +1190,7 @@ button:hover .star-4 {
     left: 80%;
     width: 8px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
@@ -1195,7 +1200,7 @@ button:hover .star-5 {
     left: 115%;
     width: 15px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
@@ -1205,10 +1210,10 @@ button:hover .star-6 {
     left: 60%;
     width: 5px;
     height: auto;
-    filter: drop-shadow(0 0 10px #ffe203);
+    filter: drop-shadow(0 0 10px #64a9f6);
     z-index: 2;
 }
 
 .fil0 {
-    fill: #ffe203;
+    fill: #64a9f6;
 }
