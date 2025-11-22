@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <canvas id="network-bg"></canvas>
+    <!-- <canvas id="network-bg"></canvas> -->
     <!-- Navbar -->
     <header>
         <div class="nav-container">
@@ -39,12 +39,12 @@
         <canvas id="hero-network"></canvas>
         <div class="hero-content">
             <h1>We Build Stunning
-            <span class="animated-text">
-                <span class="text-slide active">Business Websites</span>
-                <span class="text-slide">Portfolio Sites</span>
-                <span class="text-slide">Landing Pages</span>
-                <span class="text-slide">Custom Designs</span>
-            </span>
+                <span class="animated-text">
+                    <span class="text-slide active">Business Websites</span>
+                    <span class="text-slide">Portfolio Sites</span>
+                    <span class="text-slide">Landing Pages</span>
+                    <span class="text-slide">Custom Designs</span>
+                </span>
             </h1>
             <p>Your digital presence, crafted perfectly with modern designs, responsive layouts, and SEO-friendly
                 websites.</p>
@@ -301,47 +301,77 @@
     <!-- Process Section -->
     <section id="process" class="process">
         <h2>How We Work</h2>
-        <div class="process-wrapper">
-            <div class="process-line"></div>
+        <div class="process-card-rotate">
+            <div class="process-circle">
+                <!-- Step 1 -->
+                <div class="process-card" style="--i:4;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>1</h4>
+                        </div>
+                        <div class="icon-circle">💬</div>
+                        <div class="process-text">Discussion</div>
+                    </div>
+                </div>
 
-            <ul class="process-list">
-                <li>Step 1</li>
-                <li>Step 2</li>
-                <li>Step 3</li>
-                <li>Step 4</li>
-                <li>Step 5</li>
-                <li>Step 6</li>
-            </ul>
+                <!-- Step 2 -->
+                <div class="process-card" style="--i:3;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>2</h4>
+                        </div>
+                        <div class="icon-circle">🖌️</div>
+                        <div class="process-text">Design Layout</div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-card" style="--i:2;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>3</h4>
+                        </div>
+                        <div class="icon-circle">💻</div>
+                        <div class="process-text">Development</div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-card" style="--i:1;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>4</h4>
+                        </div>
+                        <div class="icon-circle">🔍</div>
+                        <div class="process-text">Review</div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-card" style="--i:0;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>5</h4>
+                        </div>
+                        <div class="icon-circle">🚀</div>
+                        <div class="process-text">Launch</div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="process-card" style="--i:-1;">
+                    <div class="process-card-item">
+                        <div class="step">
+                            <h4>6</h4>
+                        </div>
+                        <div class="icon-circle">📞</div>
+                        <div class="process-text">Support</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="process-grid">
-            <div class="process-card">
-                <div class="icon-circle">💬</div>
-                <div class="process-text">Discussion</div>
-            </div>
-            <div class="process-card">
-                <div class="icon-circle">🖌️</div>
-                <div class="process-text">Design Layout</div>
-            </div>
-            <div class="process-card">
-                <div class="icon-circle">💻</div>
-                <div class="process-text">Development</div>
-            </div>
-            <div class="process-card">
-                <div class="icon-circle">🔍</div>
-                <div class="process-text">Review</div>
-            </div>
-            <div class="process-card">
-                <div class="icon-circle">🚀</div>
-                <div class="process-text">Launch</div>
-            </div>
-            <div class="process-card">
-                <div class="icon-circle">📞</div>
-                <div class="process-text">Support</div>
-            </div>
-        </div>
-
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -352,29 +382,32 @@
             <div class="contact-left">
                 <div class="contact-card">
                     <div class="contact-icon">💬</div>
-                    <p>WhatsApp: +91 9000000000</p>
+                    <p>WhatsApp: <br>+91 9000000000</p>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-icon">✉️</div>
-                    <p>Email: info@starkdigitech.in</p>
+                    <p>Email: <br> info@starkdigitech.in</p>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
-                    <p>Phone: +91 9000000000</p>
+                    <p>Phone: <br> +91 9000000000</p>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-icon">📍</div>
-                    <p>Bengaluru, India</p>
+                    <p>Location: <br>Bengaluru, India</p>
                 </div>
             </div>
 
             <!-- RIGHT SIDE FORM -->
             <form class="contact-form">
+                <p>Name:</p>
                 <input type="text" placeholder="Your Name" required>
+                <p>Number:</p>
                 <input type="number" placeholder="Your Number" required>
+                <p></p>
                 <textarea placeholder="Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>

@@ -28,27 +28,9 @@ setInterval(() => {
 
 
 
-{/* <script> */ }
-document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".process-card");
-  let current = 0;
-
-  function animateStep() {
-    cards.forEach(card => card.classList.remove("active"));
-    cards[current].classList.add("active");
-
-    current = (current + 1) % cards.length; // loop back to first
-  }
-
-  animateStep(); // start immediately
-  setInterval(animateStep, 400); // change step every 1 second
-});
-// </script
-
-
 // ===== Network BG (full page) =====
 (function(){
-    const canvas = document.getElementById('network-bg');
+    const canvas = document.getElementById('hero-network');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
