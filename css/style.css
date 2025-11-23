@@ -597,7 +597,7 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    height: 55vh;
+    height: 65vh;
 }
 
 /* Cards */
@@ -652,7 +652,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 55vh;
+    height: 65vh;
 }
 
 .contact-form input,
