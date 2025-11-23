@@ -400,7 +400,7 @@ header {
 .service-card {
     position: relative;
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     border-radius: 15px;
     padding: 25px;
     color: #fff;
@@ -419,9 +419,9 @@ header {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     border-radius: 15px;
-    z-index: 0;
+    /* z-index: -1; */
 }
 
 /* Heading */
@@ -440,7 +440,7 @@ header {
     text-align: justify;
     z-index: 1;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     margin-top: 15px;
 }
@@ -457,7 +457,7 @@ header {
 /* Show paragraph on hover */
 .service-card:hover p {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(30); */
 }
 
 /* Keep heading centered initially */
@@ -470,30 +470,30 @@ header {
 
 .process {
     text-align: center;
-    padding: 50px 0;
+    padding: 0px;
 }
 
 .process h2 {
     margin-bottom: 40px;
     font-size: 2rem;
-    color: #fff;
+    color: gold;
 }
 
 /* Circular container */
 .process-circle {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 450px;
     margin: 0 auto;
 }
 
 /* Position each step in a circle */
 .process-card {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120px;
-    height: 120px;
+    top: 26%;
+    left: 42%;
+    width: 135px;
+    height: 135px;
     transform: rotate(calc(60deg * var(--i))) translate(200px); /* only position */
     transform-origin: center center;
 }
@@ -510,6 +510,10 @@ header {
     align-items: center;
     justify-content: center;
     transform: rotate(calc(-60deg * var(--i))); /* counter rotation to keep upright */
+}
+
+.process-card-rotate{
+    padding: 55px;
 }
 
 /* Number circle */
@@ -538,7 +542,7 @@ header {
 
 /* Text */
 .process-text {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: #fff;
     font-weight: 600;
     text-align: center;
