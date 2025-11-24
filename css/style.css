@@ -832,7 +832,7 @@ header {
 
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
+    bottom: 95px;
     right: 25px;
     z-index: 1000;
     width: 60px;
