@@ -169,3 +169,19 @@ setInterval(() => {
     });
 })();
 
+
+document.getElementById("whatsappForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let number = document.getElementById("number").value;
+    let msg = document.getElementById("message").value;
+
+    let whatsappNumber = "9019040426";
+
+    let finalMessage = `Name: ${name}%0AFrom: ${number}%0AMessage: ${msg}`;
+
+    let url = `https://wa.me/${whatsappNumber}?text=${finalMessage}`;
+
+    window.open(url, "_blank");
+});
